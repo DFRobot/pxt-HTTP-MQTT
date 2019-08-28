@@ -94,7 +94,7 @@ enum LOCATION {
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#008B00 icon="\uf1eb" block="ObloqIFTTTandWeather"
+//% weight=10 color=#008B00 icon="\uf1eb" block="HTTP-MQTT-Weather"
 namespace ObloqIFTTTandWeather {
 
     //serial
