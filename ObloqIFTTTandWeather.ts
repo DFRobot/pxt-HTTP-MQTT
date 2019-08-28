@@ -457,14 +457,12 @@ namespace ObloqIFTTTandWeather {
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_setup
     //% block="Webhooks http set|Pin set:|receiving data (green wire): %receive|sending data (blue wire): %send|Wi-Fi:|name: %SSID|password: %PASSWORD|start connection"
-    export function Obloq_http_setup(/*serial*/receive: SerialPin, send: SerialPin,
+    export function WIFI_setup(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string,
         /*EVENT: string, KEY: string*/):
         void {
         OBLOQ_WIFI_SSID = SSID
         OBLOQ_WIFI_PASSWORD = PASSWORD
-       // OBLOQ_WEBHOOKS_EVENT = EVENT
-        //OBLOQ_WEBHOOKS_KEY = KEY
         OBLOQ_SERIAL_TX = send
         OBLOQ_SERIAL_RX = receive
         Obloq_serial_init()
