@@ -21,7 +21,7 @@
     "IFTTT_MQTT_Weather.WIFI_setup|block": "WIFI设置 | 引脚设置: | 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send | Wi-Fi: | 名称: %SSID| 密码: %PASSWORD开始连接",
     "IFTTT_MQTT_Weather.Obloq_http_IFTTT|block": "IFTTT配置:|event: %EVENT|key: %KEY",
     "IFTTT_MQTT_Weather.get_weather|block": "获取天气",
-    "IFTTT_MQTT_Weather.Set_location|block": "设置新加坡位置 %location",
+    "IFTTT_MQTT_Weather.Set_location|block": "设置新加坡城市 %location",
     "IFTTT_MQTT_Weather.get_temperature|block": "获取温度",
     "IFTTT_MQTT_Weather.get_humidity|block":"获取湿度",
     "IFTTT_MQTT_Weather.get_windSpeed|block":"获取风速"

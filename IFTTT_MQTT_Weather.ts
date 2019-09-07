@@ -550,7 +550,7 @@ namespace IFTTT_MQTT_Weather {
     //天气
     //% weight=80
     //% blockId=Obloq_Weather_setLocation
-    //% block="Set Location|%location"
+    //% block="Setting up Singapore city|%location"
     export function Set_location(location: LOCATION): void {
         G_city = location;
     }
