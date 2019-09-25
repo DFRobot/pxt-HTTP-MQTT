@@ -22,6 +22,7 @@ const OBLOQ_MQTT_EASY_IOT_SERVER_CHINA = "iot.dfrobot.com.cn"
 const OBLOQ_MQTT_EASY_IOT_SERVER_GLOBAL = "mqtt.beebotte.com"
 const OBLOQ_MQTT_EASY_IOT_SERVER_EN = "iot.dfrobot.com"
 const OBLOQ_MQTT_EASY_IOT_PORT = 1883
+const OBLOQ_WEBHOOKS_URL = "maker.ifttt.com"
 //other iot
 const OBLOQ_MQTT_USER_IOT_SERVER = "---.-----.---"
 const OBLOQ_MQTT_USER_IOT_PORT = 0
@@ -137,7 +138,7 @@ namespace IFTTT_MQTT_Weather {
     let OBLOQ_WORKING_MODE_IS_HTTP = OBLOQ_BOOL_TYPE_IS_FALSE
     let OBLOQ_WORKING_MODE_IS_STOP = OBLOQ_BOOL_TYPE_IS_TRUE
 
-    let OBLOQ_WEBHOOKS_URL = "maker.ifttt.com"
+    
     let OBLOQ_WEBHOOKS_KEY = ""
     let OBLOQ_WEBHOOKS_EVENT = ""
     let G_city = 0;
