@@ -21,8 +21,8 @@ const OBLOQ_MQTT_DEFAULT_SERVER = true
 const OBLOQ_MQTT_EASY_IOT_SERVER_CHINA = "iot.dfrobot.com.cn"
 const OBLOQ_MQTT_EASY_IOT_SERVER_GLOBAL = "mqtt.beebotte.com"
 const OBLOQ_MQTT_EASY_IOT_SERVER_EN = "iot.dfrobot.com"
+const OBLOQ_MQTT_EASY_IOT_SERVER_TK = "api.thingspeak.com"
 const OBLOQ_MQTT_EASY_IOT_PORT = 1883
-const OBLOQ_WEBHOOKS_URL = "maker.ifttt.com"
 //other iot
 const OBLOQ_MQTT_USER_IOT_SERVER = "---.-----.---"
 const OBLOQ_MQTT_USER_IOT_PORT = 0
@@ -41,6 +41,7 @@ const OBLOQ_ERROR_TYPE_IS_MQTT_SUBTOPIC_FAILURE = -6
 const OBLOQ_STR_TYPE_IS_NONE = ""
 const OBLOQ_BOOL_TYPE_IS_TRUE = true
 const OBLOQ_BOOL_TYPE_IS_FALSE = false
+const OBLOQ_WEBHOOKS_URL = "maker.ifttt.com"
 //topics name
 enum TOPIC {
     topic_1 = 1,
@@ -96,7 +97,7 @@ enum LOCATION {
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#008B00 icon="\uf1eb" block="IFTTT_MQTT_Weather"
+//% weight=10 color=#008B00 icon="\uf1eb" block="HTTP"
 namespace IFTTT_MQTT_Weather {
 
     //serial
@@ -138,7 +139,7 @@ namespace IFTTT_MQTT_Weather {
     let OBLOQ_WORKING_MODE_IS_HTTP = OBLOQ_BOOL_TYPE_IS_FALSE
     let OBLOQ_WORKING_MODE_IS_STOP = OBLOQ_BOOL_TYPE_IS_TRUE
 
-    
+
     let OBLOQ_WEBHOOKS_KEY = ""
     let OBLOQ_WEBHOOKS_EVENT = ""
     let G_city = 0;
@@ -517,7 +518,7 @@ namespace IFTTT_MQTT_Weather {
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% SERVER.fieldEditor="gridpicker" SERVER.fieldOptions.columns=2
     //% blockId=IFTTT_MQTT_Weather_mqtt_setup
-    //% block="Beebotte setup mqtt|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection:| server: %SERVERS"
+    //% block=" setup mqtt|API Key: %API_KEY|Secret Key: %SECRET_KEY|(default topic_0) Topic: %IOT_TOPIC|start connection:| server: %SERVERS"
     export function Obloq_mqtt_setup(/*mqtt*/API_KEY: string, SECRET_KEY: string, IOT_TOPIC: string, SERVER: SERVERS):
         void {
         //OBLOQ_WIFI_SSID = SSID
@@ -1198,6 +1199,26 @@ namespace IFTTT_MQTT_Weather {
         return ret
     }
 
+    /**
+        * The HTTP post request.url(string): URL; content(string):content
+        * time(ms): private long maxWait
+        * @param time set timeout, eg: 10000
+       */
+    //% weight=99
+    //% blockId=IFTTT_MQTT_Weather_ThingSpeak_Get
+    //% block="ThingSpeak(Get) | write key %KEY|value1 %value1| value2 %value2| value3 %value3| timeout(ms) %time"
+    export function Obloq_http_TK_GET(KEY: string, field1: string, field2: string, field3: string, time: number): string {
+        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        if (!OBLOQ_HTTP_INIT)
+            return OBLOQ_STR_TYPE_IS_NONE
+
+        if (!OBLOQ_SERIAL_INIT) {
+            Obloq_serial_init()
+        }
+        obloqWriteString("|3|1|http://" + OBLOQ_MQTT_EASY_IOT_SERVER_TK + "/update?api_key=" + KEY + "&field1=" + field1 + "&field2=" + field2 + "&field3=" + field3 + "|\r")
+
+        return Obloq_http_wait_request(time)
+    }
 
 
 

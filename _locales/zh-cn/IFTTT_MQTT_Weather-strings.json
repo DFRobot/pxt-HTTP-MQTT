@@ -14,7 +14,7 @@
     "IFTTT_MQTT_Weather.Obloq_mqtt_send_message|block": "MQTT 发送消息 %mess |至 topic_0",
     "IFTTT_MQTT_Weather.Obloq_mqtt_send_message_more|block": "MQTT 发送消息 %mess |至 %top",
     "IFTTT_MQTT_Weather.Obloq_mqtt_add_topic|block": "新增订阅 %top |: %IOT_TOPIC",
-    "IFTTT_MQTT_Weather.Obloq_mqtt_callback_user|block": "MOTT 在 topic_0 收到消息时运行",
+    "IFTTT_MQTT_Weather.Obloq_mqtt_callback_user|block": "MQTT 在 topic_0 收到消息时运行",
     "IFTTT_MQTT_Weather.Obloq_mqtt_callback_user_more|block": "MQTT 在 %top|收到消息时运行",
     "IFTTT_MQTT_Weather.WIFI_setup|block": "WIFI设置 | 引脚设置: | 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send | Wi-Fi: | 名称: %SSID| 密码: %PASSWORD开始连接",
     "IFTTT_MQTT_Weather.Obloq_http_IFTTT|block": "IFTTT配置:|event: %EVENT|key: %KEY",
