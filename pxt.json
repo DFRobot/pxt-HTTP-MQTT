@@ -11,7 +11,7 @@
         "README.md",
         "HTTP.ts",
         "Obloq.cpp",
-        "_locales/zh-cn/IFTTT_MQTT_Weather-strings.json",
+        "_locales/zh-cn/HTTP-strings.json",
         "_locales/zh-tw/ObloqIFTTTandWeather-strings.json"
     ],
     "testFiles": [
