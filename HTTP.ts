@@ -572,7 +572,7 @@ namespace IFTTT_MQTT_Weather {
     //天气
     //% weight=80
     //% blockId=IFTTT_MQTT_Weather_Weather_setLocation
-    //% block="Setting up Singapore city|%location"
+    //% block="select a city of Singapore|%location"
     export function Set_location(location: LOCATION): void {
         G_city = location;
     }
