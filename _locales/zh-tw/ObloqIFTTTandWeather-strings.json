@@ -21,7 +21,7 @@
 	"ObloqIFTTTandWeather.Obloq_mqtt_callback_user_more|block": "在 %top|收到消息時運行",
 	"ObloqIFTTTandWeather.Obloq_http_get|block": "http(get) | url %url| 超时(毫秒) %time",
 	"ObloqIFTTTandWeather.Obloq_http_post|block": "http(post) | url %url| content %content| 超时(毫秒) %time",
-	"ObloqIFTTTandWeather.Obloq_http_put|block": "http(put) | url %url| content %content| 超时(毫秒) %time"
+	"ObloqIFTTTandWeather.Obloq_http_put|block": "http(put) | url %url| content %content| 超时(毫秒) %time",
 	"ObloqIFTTTandWeather.Obloq_http_setup|block": "Obloq HTTP 初始设置 | 引脚设置: | 接收数据(绿色导线): %receive| 发送数据(蓝色导线): %send | Wi-Fi: | 名称: %SSID| 密码: %PASSWORD开始连接",
     "ObloqIFTTTandWeather.Obloq_http_IFTTT|block": "Obloq IFTTT配置:|event: %EVENT|key: %KEY",
     "ObloqIFTTTandWeather.get_weather|block": "获取天气",
