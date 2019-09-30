@@ -11,7 +11,7 @@
         "README.md",
         "HTTP.ts",
         "Obloq.cpp",
-        "_locales/zh-cn/HTTP-strings.json"
+        "_locales/zh-cn/HTTP_MQTT-strings.json"
     ],
     "testFiles": [
         "test.ts",
