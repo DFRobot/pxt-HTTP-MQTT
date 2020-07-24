@@ -269,17 +269,20 @@ namespace IFTTT_MQTT_Weather {
         let item = OBLOQ_STR_TYPE_IS_NONE
         //First send data through usb, avoid the first data scrambled.
         obloqWriteString("123")
+        
         item = serial.readString()
         item = serial.readString()
         item = serial.readString()
+        
         serial.redirect(
             OBLOQ_SERIAL_TX,
             OBLOQ_SERIAL_RX,
             BaudRate.BaudRate9600
-        )
+        ) 
         obloqSetTxBufferSize(300)
         obloqSetRxBufferSize(300)
         obloqWriteString("\r")
+        
         item = serial.readString()
         OBLOQ_SERIAL_INIT = OBLOQ_BOOL_TYPE_IS_TRUE
         obloqClearRxBuffer()
@@ -1522,7 +1525,7 @@ namespace IFTTT_MQTT_Weather {
 
 
     function Obloq_serial_recevice(): void {
-
+        //basic.showString("B")
         let Obloq_message_str = serial.readString()
         let size = Obloq_message_str.length
         let item = Obloq_message_str
@@ -1604,6 +1607,7 @@ namespace IFTTT_MQTT_Weather {
             }
             return
         } else if (item.indexOf("|2|1|", 0) != -1) {
+            
             OBLOQ_ANSWER_CMD = "WifiDisconnect"
             OBLOQ_ANSWER_CONTENT = OBLOQ_STR_TYPE_IS_NONE
             if (OBLOQ_MQTT_INIT || OBLOQ_HTTP_INIT || OBLOQ_WIFI_CONNECTED) {
@@ -1613,6 +1617,7 @@ namespace IFTTT_MQTT_Weather {
         } else if (item.indexOf("|2|2|", 0) != -1) {
             OBLOQ_ANSWER_CMD = "WifiConnecting"
             OBLOQ_ANSWER_CONTENT = OBLOQ_STR_TYPE_IS_NONE
+            //serial.writeNumber(12)
             return
         } else if (item.indexOf("|2|3|", 0) != -1) {
             OBLOQ_ANSWER_CMD = "WifiConnected"
@@ -1637,8 +1642,12 @@ namespace IFTTT_MQTT_Weather {
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
         }
+        //basic.showString("A")
         OBLOQ_MQTT_EVENT = OBLOQ_BOOL_TYPE_IS_TRUE
         obloqEventOn()
-        control.onEvent(<number>32, <number>1, Obloq_serial_recevice); // register handler
+        //control.onEvent(<number>32, <number>1, Obloq_serial_recevice,16); // register handler
+        serial.onDataReceived('\r', Obloq_serial_recevice )
+        //control.onEvent(32, 1, Obloq_serial_recevice)
     }
+
 } 
